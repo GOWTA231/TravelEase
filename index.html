@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageWise | Premium Trip Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="themeToggle">🌙 Dark Mode</button>
+
+    <header>
+        <h1>Travel<span>Ease</span></h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search destinations (e.g. Paris, Tokyo, Bali)...">
+        </div>
+    </header>
+
+    <main>
+        <section class="planner-tool">
+            <div class="calc-grid">
+                <input type="number" id="days" placeholder="Number of Days" min="1">
+                <input type="number" id="dailyBudget" placeholder="Daily Budget ($)" min="1">
+                <div class="result">Estimated Total: $<span id="totalCost">0</span></div>
+            </div>
+        </section>
+
+        <section id="tripContainer" class="trip-grid">
+            </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* --- Theme Variables --- */
+:root {
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Dark Mode Overrides */
+body.dark-theme {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Base Styles --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.4s ease, color 0.4s ease;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- Header & Search --- */
+header {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+header h1 span {
+    color: var(--primary);
+}
+
+.search-container input {
+    width: 100%;
+    max-width: 500px;
+    padding: 16px 24px;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-container input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* --- Budget Calculator --- */
+.planner-tool {
+    max-width: 800px;
+    margin: -40px auto 40px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+}
+
+.calc-grid {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.calc-grid input {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    padding: 12px;
+    border-radius: 12px;
+    color: var(--text-color);
+    width: 150px;
+    font-size: 1rem;
+}
+
+.result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-left: 15px;
+}
+
+/* --- Dynamic Grid & Cards --- */
+.trip-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    padding: 0; /* Ensures image goes edge-to-edge */
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+    margin: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.5rem;
+}
+
+.card p {
+    margin: 0 1.5rem 1.5rem;
+    opacity: 0.8;
+}
+
+/* --- Buttons --- */
+.wishlist-btn {
+    display: block;
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem 1.5rem;
+    padding: 12px;
+    background: linear-gradient(to right, var(--primary), var(--primary-hover));
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.wishlist-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+#themeToggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 100;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
